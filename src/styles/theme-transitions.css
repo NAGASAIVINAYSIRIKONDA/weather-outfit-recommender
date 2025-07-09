@@ -1,0 +1,112 @@
+/* Theme transition styles */
+.theme-transition {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Light mode specifics */
+.light-mode {
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* Dark mode specifics */
+.dark-mode {
+  color: #f5f5f5;
+  background-color: #121212;
+}
+
+/* Weather background animations */
+.weather-bg-clear {
+  background-image: linear-gradient(to right, rgba(255, 195, 0, 0.1), rgba(255, 160, 0, 0.1));
+}
+
+.weather-bg-clouds {
+  background-image: linear-gradient(to right, rgba(158, 158, 158, 0.1), rgba(117, 117, 117, 0.1));
+}
+
+.weather-bg-rain {
+  background-image: linear-gradient(to right, rgba(3, 169, 244, 0.1), rgba(2, 136, 209, 0.1));
+}
+
+.weather-bg-snow {
+  background-image: linear-gradient(to right, rgba(224, 242, 241, 0.1), rgba(178, 223, 219, 0.1));
+}
+
+.weather-bg-thunderstorm {
+  background-image: linear-gradient(to right, rgba(103, 58, 183, 0.1), rgba(81, 45, 168, 0.1));
+}
+
+.weather-bg-mist {
+  background-image: linear-gradient(to right, rgba(176, 190, 197, 0.1), rgba(144, 164, 174, 0.1));
+}
+
+/* Animation for card transitions */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-animation {
+  animation: cardFadeIn 0.5s ease forwards;
+}
+
+/* Improved scrollbar for all browsers */
+* {
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+}
+
+.light-mode *::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode *::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Fix for dark mode text selection */
+.dark-mode ::selection {
+  background-color: rgba(144, 202, 249, 0.5);
+  color: #fff;
+}
+
+.light-mode ::selection {
+  background-color: rgba(25, 118, 210, 0.2);
+  color: #000;
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-animation {
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Pulse animation for icons */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
